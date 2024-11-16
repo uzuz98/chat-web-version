@@ -2,10 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@import '@coin98-com/wallet-adapter-react-ui/styles.css';
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --gray05: #151515;
+  --gray1: #202020;
+  --text-gray: #606060;
+  --text-gray-2: #454545;
+  --text-yellow: #cda349;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,11 +24,267 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  color: #fff;
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+body {
+  .piscale--light {
+    --spectrum-global-color-bgSecondary: #000 !important;
+    --spectrum-global-color-bgPrimary: #202020 !important;
+    --spectrum-global-color-userPrimary: #cda349 !important;
+    --spectrum-global-color-contentPrimary: #454545 !important;
+  }
+
+  #chat-container {
+    color: #fff;
+    background-color: var(--gray1);
+
+    .threadList__container {
+      background-color: var(--gray1);
+      /* height: 100vh; */
+
+      .piscale-InputField--wrapper {
+        border-radius: 9999px;
+      }
+
+      .piscale-InputField--container {
+        background-color: #171717;
+        border-radius: 9999px;
+        border-width: 0px;
+      }
+
+      .piscale-InputField--container {}
+    }
+
+    .threadList__container>div:first-child {
+      padding-bottom: 10px;
+      flex: unset !important;
+
+      >div:first-child {
+
+        >div:nth-child(3) {
+          display: none;
+        }
+      }
+    }
+
+    .threadList__container>div:nth-child(2) {
+      background-color: var(--gray1);
+      height: unset !important;
+    }
+
+    #thread-list-container {
+      background-color: #000;
+      border-radius: 24px 24px 0 0;
+
+      .thread-item {
+        background-color: #000;
+
+        >div:first-child {
+          display: none;
+          visibility: hidden !important;
+          background-color: transparent;
+        }
+
+        .thread-setting {
+          div[class^="unreadCountIcon"] {
+            background: red;
+          }
+        }
+
+        &:hover {
+          background-color: var(--gray1) !important;
+        }
+
+        .thread-item__wrapper {
+          &.focus {
+            background-color: var(--gray1) !important;
+          }
+
+          &:hover {
+            background-color: var(--gray1) !important;
+          }
+
+          &::after {
+            background-color: var(--gray1);
+            height: 2px;
+          }
+
+          .name {
+            color: #fff !important;
+          }
+
+          .last-message {
+            color: #676767 !important;
+          }
+
+          .last-message-highlight {
+            color: #fff !important;
+          }
+        }
+
+        &:last-child {
+          .thread-item__wrapper:after {
+            height: 0px;
+          }
+        }
+      }
+    }
+
+    .threadDetail__container {
+      .thread-detail {
+        background-color: var(--gray1);
+
+        #thread-detail-communiConversation {
+          background-color: #000;
+          background-image: unset;
+          border-top-width: 0;
+          border-radius: 24px 24px 0 0;
+
+          div[class^="messageContextMenu"] {
+            .piscale-scroll {
+              border-width: 0px;
+
+              button {
+                .piscale-Typography {
+                  color: #fff !important;
+                }
+              }
+            }
+          }
+
+          >div {
+            >div:last-child {
+              >div {
+                border-width: 0px;
+                border-radius: 0px;
+                margin: 0;
+                padding: 12px 0;
+                overflow: hidden;
+
+                >div {
+                  background-color: var(--gray1) !important;
+                }
+              }
+
+            }
+
+            div.piscale-scroll {
+              p {
+                color: #fff
+              }
+            }
+          }
+        }
+
+        .content-display {
+          color: #fff;
+        }
+
+        .content-message {
+          &.mine {
+            .message-content-wrapper {
+              .ps-message-text {
+                background-color: var(--text-yellow);
+
+                .content-display {
+                  color: #000;
+                }
+
+                div:nth-child(2) {
+                  div {
+                    color: var(--text-gray-2) !important;
+                  }
+                }
+              }
+            }
+          }
+
+          .message-content-wrapper {
+            .top-radius {
+              background: #151515;
+              border-width: 0px;
+            }
+
+            .reply__info {
+              svg {
+                color: #fff !important;
+              }
+            }
+          }
+
+          .piscale-action-messages {
+            background-color: transparent;
+            color: #fff;
+
+            strong {
+              color: var(--text-yellow);
+              font-weight: 500;
+            }
+          }
+        }
+      }
+
+      .thread-detail__content {
+        >div:first-child {
+          div[class$="title"] {
+            div {
+              color: #fff !important;
+            }
+          }
+        }
+      }
+
+    }
+
+    .sidebar__wrapper {
+      .sidebar__content {
+        border-left-color: var(--text-gray-2);
+      }
+
+      div[id^="thread-detail-communiConversation-sub-thread-"] {
+        background-image: none;
+        background-color: #000;
+        border-top-width: 0;
+        border-radius: 24px 24px 0 0;
+
+        >div {
+          >div:last-child {
+            >div {
+              margin: 0;
+              border-width: 0px;
+              border-radius: 0px;
+
+              div {
+                background-color: var(--gray1);
+              }
+            }
+          }
+        }
+      }
+
+      div[class$="editorWrapper"] {
+        div[class$="input"] {
+          color: #fff;
+        }
+      }
+    }
+
+    div[class^="messageContextMenu_451e13"] {
+      div[id^="ps-bubble-wrapper-communiConversation-sub-thread"] {
+        >div {
+          .piscale-scroll {
+            border-width: 0px;
+
+            .piscale-Typography {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
 }
