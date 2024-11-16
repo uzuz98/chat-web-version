@@ -41,7 +41,7 @@ export default function Page(): JSX.Element {
     tld: string
   }[]>([])
   const [isLoading, setIsLoading] = useState(false)
-  const [threadId, setThreadId] = useState('49110071457410')
+  const [threadId, setThreadId] = useState('')
   const [authToken, setAuthToken] = useState('')
 
   const handlOpenWalletModal = () => {
