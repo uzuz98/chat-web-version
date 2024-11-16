@@ -57,7 +57,7 @@ interface IDomainConfig {
   }
 }
 
-export const walletOfOwner = async (address: string) => {
+const walletOfOwner = async (address: string) => {
   const cacheTimes = Date.now()
   // one id config - domainConfigData
   const response = await infoAPI.get(`OneIDV3.json?cache=${cacheTimes}`)
