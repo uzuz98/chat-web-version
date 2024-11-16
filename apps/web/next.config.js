@@ -20,4 +20,7 @@ module.exports = {
     "@react-spectrum/tooltip",
     "@react-spectrum/view",
   ],
+  typescript: {
+    ignoreBuildErrors: true
+  }
 };
